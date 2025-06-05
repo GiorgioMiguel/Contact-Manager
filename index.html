@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Contact Manager</title>
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/scroll.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script type="module" src="js/navbar.js"></script>
+  <script src="js/keyHandler.js" defer></script>
+  <script type="module" src="js/main.js"></script>
+  <link rel="icon" href="assets/favicon/rolodex.png" type="image/png">
+
+</head>
+
+<body class="login-page">
+  <!-- Top Navigation Bar -->
+  <nav class="top-navbar">
+    <div class="navbar-content">
+      <a href="/" class="navbar-brand">Rolodex<span style="color: var(--textLight);">it</span></a>
+      <div class="navbar-links">
+        <!-- Menu Dropdown -->
+        <div class="navbar-dropdown">
+          <button class="navbar-dropdown-toggle">
+            <div class="hamburger-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <div class="navbar-dropdown-menu">
+            <div class="dropdown-menu-content">
+              <a href="/" class="dropdown-menu-item active">Login</a>
+              <a href="meet-team.html" class="dropdown-menu-item">Meet the Team</a>
+              <a href="register.html" class="dropdown-menu-item">Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section class="login-form-section">
+      <h2>Login</h2>
+      <div id="loginResult" class="result-output"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginName">Username:</label>
+          <input type="text" id="loginName" required />
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" required />
+        </div>
+        <button type="button" id="loginButton" onclick="doLogin()">Login</button>
+      </form>
+
+      <p class="register-message" style="margin-top: 1rem; font-size: 0.875rem;">
+        Don't have an account?
+        <a href="register.html" style="color: white; text-decoration: underline;">Register
+          here</a>
+      </p>
+    </section>
+  </div>
+  <img src="assets/favicon/rolodex.png" alt="Rolodexit Logo" class="bottom-right-logo">
+
+</body>
+
+</html>

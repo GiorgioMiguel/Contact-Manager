@@ -1,0 +1,101 @@
+/* Skeleton Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, 
+        var(--bgMedium) 25%, 
+        #4a5159 50%, 
+        var(--bgMedium) 75%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+    border-radius: 4px;
+}
+
+/* Skeleton rows should match table structure exactly */
+.skeleton-row {
+    height: auto;
+}
+
+.skeleton-row td {
+    padding: 12px; /* Match the contactsTable padding */
+    vertical-align: middle;
+    border-bottom: 1px solid var(--baseColor); /* Match table border */
+    background-color: #fff; /* Match table background */
+}
+
+.skeleton-row:hover td {
+    background-color: #f5f5f5; /* Match table hover effect */
+}
+
+/* Skeleton text elements */
+.skeleton-text {
+    height: 16px;
+    margin: 4px 0;
+    display: block;
+}
+
+/* Make skeleton columns match your 2-column table structure */
+.skeleton-row td:nth-child(1) { /* First Name */
+    width: 50%;
+    text-align: left;
+}
+
+.skeleton-row td:nth-child(2) { /* Last Name */
+    width: 50%;
+    text-align: left;
+}
+
+/* Skeleton element sizes to look realistic and fit the columns */
+.skeleton-row td:nth-child(1) .skeleton-text { /* First Name */
+    width: 70%;
+    max-width: 120px;
+}
+
+.skeleton-row td:nth-child(2) .skeleton-text { /* Last Name */
+    width: 75%;
+    max-width: 130px;
+}
+
+/* Random width variations for more realistic look */
+.skeleton-text.short { 
+    width: 60% !important; 
+}
+
+.skeleton-text.medium { 
+    width: 75% !important; 
+}
+
+.skeleton-text.long { 
+    width: 85% !important; 
+}
+
+/* Responsive design to match the main table */
+@media (max-width: 768px) {
+    .skeleton-row td {
+        padding: 8px; /* Match responsive padding */
+        font-size: 0.9rem;
+    }
+    
+    .skeleton-text {
+        height: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skeleton-row td {
+        padding: 6px; 
+        font-size: 0.8rem;
+    }
+    
+    .skeleton-text {
+        height: 12px;
+    }
+}

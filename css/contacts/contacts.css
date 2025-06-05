@@ -1,0 +1,254 @@
+@import url('../variables.css');
+
+/* RESET + BASE LAYOUT */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bgDark);
+  color: var(--baseColor);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.875rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* BASE COMPONENT CLASSES */
+.btn-base {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--loginSubmitBackgroundColor);
+  color: var(--loginSubmitColor);
+}
+
+.btn-primary:hover {
+  background-color: var(--loginSubmitHoverBackgroundColor);
+}
+
+.btn-secondary {
+  background-color: var(--baseColor);
+  color: var(--textLight);
+}
+
+.btn-secondary:hover {
+  background-color: #4e5560;
+}
+
+.btn-small {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  margin: 0 2px;
+  border-radius: 3px;
+}
+
+.panel-base {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #555;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--bgMedium);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* HEADER */
+#headerDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #555;
+}
+
+#headerDiv h1 {
+  margin: 0;
+  color: var(--textLight);
+  font-size: 1.5rem;
+}
+
+/* USER INFO */
+#userInfo {
+  font-size: 0.9rem;
+  text-align: right;
+  color: var(--baseColor);
+}
+
+/* LOGOUT BUTTON - Combined styles */
+#logoutButton {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+  background-color: var(--loginSubmitBackgroundColor);
+  color: var(--loginSubmitColor);
+  margin: 0 2px;
+  margin-left: 8px;
+}
+
+#logoutButton:hover {
+  background-color: var(--loginSubmitHoverBackgroundColor);
+}
+
+/* TAB STYLES */
+.tab-container {
+  border-bottom: 1px solid #555;
+  margin-bottom: 1rem;
+}
+
+.tab-buttons {
+  display: flex;
+  background-color: var(--bgMedium);
+  border-radius: 4px 4px 0 0;
+  border: 1px solid var(--baseColor);
+}
+
+.tab-button {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--baseColor);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.tab-button:hover {
+  background-color: var(--bgDark);
+  color: var(--textLight);
+}
+
+.tab-button.active {
+  color: var(--loginSubmitBackgroundColor);
+  border-bottom-color: var(--loginSubmitBackgroundColor);
+  background-color: var(--bgDark);
+  font-weight: bold;
+}
+
+.tab-content {
+  display: none;
+  min-height: 600px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* SIDE-BY-SIDE LAYOUT */
+.contacts-container {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 280px);
+  margin-top: 0;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* PANELS - Combined styles */
+.contacts-left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #555;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--bgMedium);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.contacts-right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #555;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--bgMedium);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  #headerDiv {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    padding: 0.75rem;
+  }
+
+  .contacts-container {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+  }
+
+  .contacts-left-panel,
+  .contacts-right-panel {
+    flex: none;
+    min-height: 300px;
+  }
+
+  .contacts-right-panel {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  #headerDiv h1 {
+    font-size: 1.2rem;
+  }
+
+  .tab-content {
+    min-height: 400px;
+  }
+
+  .contacts-container {
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
